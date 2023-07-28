@@ -1,0 +1,14 @@
+body {
+    background-image: url("images/pexels-ron-rov-16829089.jpg");
+    background-size: cover;
+    
+}
+
+h1 {
+    width: 100vw;
+    height: 8vw;
+    text-align: center;
+    font-family: 'MedievalSharp', cursive;
+    font: black;
+    font-size: 72px;
+}
