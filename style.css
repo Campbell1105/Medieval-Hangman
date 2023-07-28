@@ -18,3 +18,18 @@ h1 {
   flex-direction: column;
   height: 100vh;
 }
+
+.clues {
+  display: flex;
+  border: 1px, solid, white;
+}
+
+.letters {
+  display: flex;
+  border: 1px, solid, white;
+}
+
+.wordStatus {
+  display: flex;
+  border: 1px, solid, white;
+}
