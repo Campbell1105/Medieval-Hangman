@@ -5,7 +5,7 @@ body {
 
 h1 {
     width: 100vw;
-    height: 10vh;
+    height: 5vh;
     text-align: center;
     font-family: 'MedievalSharp', cursive;
     font: black;
@@ -20,27 +20,34 @@ h1 {
   height: 90vh;
 }
 
-.clues {
+#cluesAndWords {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  width: 50vw;
+  height: 89vh;
+}
+
+#clues {
   display: flex;
   border: 1px solid white;
-  width: 49%;
+  width: 99%;
   height: 30vh;
 }
 
-.wordStatus {
+#letters {
   border: 1px solid white;
-  width: 49%;
+  width: 99%;
   height: 30vh;
 }
 
-.usedLetters {
-  display: flex;
+#wordStatus {
   border: 1px solid white;
-  width: 49%;
-  height: 25vh
+  width: 99%;
+  height: 30vh;
 }
 
-.animations {
+#animations {
   border: 1px solid white;
   width: 49%;
   height: 80vh
