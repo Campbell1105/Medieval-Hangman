@@ -1,12 +1,11 @@
 body {
     background-image: url("images/pexels-ron-rov-16829089.jpg");
     background-size: cover;
-    
 }
 
 h1 {
     width: 100vw;
-    height: 8vw;
+    height: 10vh;
     text-align: center;
     font-family: 'MedievalSharp', cursive;
     font: black;
@@ -16,20 +15,33 @@ h1 {
 .heroContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  border: 1px solid gray;
+  width: 100vw;
+  height: 90vh;
 }
 
 .clues {
   display: flex;
-  border: 1px, solid, white;
-}
-
-.letters {
-  display: flex;
-  border: 1px, solid, white;
+  border: 1px solid white;
+  width: 49%;
+  height: 30vh;
 }
 
 .wordStatus {
+  border: 1px solid white;
+  width: 49%;
+  height: 30vh;
+}
+
+.usedLetters {
   display: flex;
-  border: 1px, solid, white;
+  border: 1px solid white;
+  width: 49%;
+  height: 25vh
+}
+
+.animations {
+  border: 1px solid white;
+  width: 49%;
+  height: 80vh
 }
