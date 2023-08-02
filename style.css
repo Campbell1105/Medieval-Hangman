@@ -36,11 +36,14 @@ h1 {
 }
 
 #alphabetBox {
+  display: flex;
+  flex-wrap: wrap;
   border: 1px solid white;
   width: 99%;
   height: 30vh;
-  font-size: 50px;
+  font-size: 45px;
   font-family: 'MedievalSharp', cursive;
+  color:rgb(46, 12, 12)
 }
 
 #wordStatus {
@@ -54,41 +57,3 @@ h1 {
   width: 49%;
   height: 99vh
 }
-
-
-
-#alphabet {
-  @include clear;
-  margin:15px auto;
-  padding:0;
-  max-width:900px;
-}
-
-#alphabet li {
-  float:left;
-  margin: 0 10px 10px 0;
-  list-style:none;
-  width:35px;
-  height:30px;
-  padding-top:10px;
-  background: brown;
-  color: wheat;
-  cursor: pointer;
-  @include corners(5px);
-  border: solid 1px white;
-}
-
-button{
-  @include corners (5px);
-  background: brown;
-  color: wheat;
-  border: solid 1px wheat;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 18px 10px;
-  width: 180px;
-  margin: 10px;
-  outline: none;
-}
-

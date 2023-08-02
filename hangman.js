@@ -50,17 +50,3 @@
       
 
         // mainLetterNode.appendChild()
-
-
-      
-      
-        // letters.id = 'alphabet';
-        // list = document.createElement('li');
-        // list.id = 'letter';
-        // list.innerHTML = alphabet[i];
-        // check();
-        // myButtons.appendChild(letters);
-        // letters.appendChild(list);
-      }
-    // }
-// }
