@@ -45,13 +45,18 @@
 
         // let pNode = document.createTextNode("basicLetter")
 
+        const answer = "";
+
         function setAnswer() {
           const wordOrder = Math.floor(Math.random() * wordlist.length);
           const chosenWord = wordList[wordOrder];
+          answer = chosenWord;
         }
 
-        var wordDisplay = [];
-        var answer = "";
+        setAnswer()
+
+        const wordDisplay = [];
+        const answer = "";
 
         let generateAnswerDisplay = document.getElementById("wordStatus")
 
@@ -85,3 +90,5 @@ const clueList = [[
 function showClues() {
   containerHint.innerHTML = `clues - ${hint}`;
 }
+
+showClues()
