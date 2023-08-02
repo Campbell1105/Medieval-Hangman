@@ -1,37 +1,66 @@
-window.onload = function () {
+// windows.onload = function () {
 
-    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+    const alphabetArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
           'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
           't', 'u', 'v', 'w', 'x', 'y', 'z'];
     
+// 
+//
 
-    var getHint ;          // Word getHint
-    var word ;              // Selected word
-    var guess ;             // Geuss
-    var geusses = [ ];      // Stored geusses
-    var lives ;             // Lives
-    var counter ;           // Count correct geusses
-    var space;              // Number of spaces in word '-'
+    const alphabet = document.querySelector('.alphatest')  
+    
+    // alphabet.textContent = "hello"
+
+
+    console.log(alphabetArray)
+    // const buttons = function () {
+    
+//     alphabet.appendChild(alphabetArray)
+//     const myButtons = document.getElementById('buttons');
+//       letters = document.createElement('ul');
   
-    // Get elements
-    var showClue = document.getElementById("clue");
-  
-  
-  
-    // create alphabet ul
-    var buttons = function () {
-    var div = document.getElementById('alphabetButtons');
-      myButtons = document.getElementById('buttons');
-      letters = document.createElement('ul');
-  
-      for (var i = 0; i < alphabet.length; i++) {
-        letters.id = 'alphabet';
-        list = document.createElement('li');
-        list.id = 'letter';
-        list.innerHTML = alphabet[i];
-        check();
-        myButtons.appendChild(letters);
-        letters.appendChild(list);
+      for (var i = 0; i < alphabetArray.length; i++) {
+
+        // alphabet.appendChild
+
+        // console.log(alphabetArray[i])
+
+        let mainLetterNode = document.querySelector(".alphatest")
+
+        let letterP = document.createElement('p')
+
+        let attP = document.createAttribute(`id="test"`);
+
+        letterP.append(attP)
+
+
+        let letterNode = document.createTextNode(`${alphabetArray[i]}`) 
+        letterP.appendChild(letterNode);
+
+        mainLetterNode.append(letterP)
+
+
+        // let addsSmallP = mainLetterNode.append(letterP)
+
+
+        // let pNode = document.createTextNode("basicLetter")
+
+    
+
+      
+
+        // mainLetterNode.appendChild()
+
+
+      
+      
+        // letters.id = 'alphabet';
+        // list = document.createElement('li');
+        // list.id = 'letter';
+        // list.innerHTML = alphabet[i];
+        // check();
+        // myButtons.appendChild(letters);
+        // letters.appendChild(list);
       }
-    }
-}
+    // }
+// }

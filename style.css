@@ -14,10 +14,10 @@ h1 {
 
 .heroContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border: 1px solid gray;
-  width: 100vw;
-  height: 90vh;
+  width: 99vw;
+  height: 99vh;
 }
 
 #cluesAndWords {
@@ -35,10 +35,12 @@ h1 {
   height: 30vh;
 }
 
-#letters {
+#alphabetBox {
   border: 1px solid white;
   width: 99%;
   height: 30vh;
+  font-size: 50px;
+  font-family: 'MedievalSharp', cursive;
 }
 
 #wordStatus {
@@ -50,8 +52,10 @@ h1 {
 #animations {
   border: 1px solid white;
   width: 49%;
-  height: 80vh
+  height: 99vh
 }
+
+
 
 #alphabet {
   @include clear;
@@ -86,11 +90,5 @@ button{
   width: 180px;
   margin: 10px;
   outline: none;
-  
-    &:hover{
-      @include transition;
-      background: white;
-      border: solid 1px white;
-      color: whitesmoke;
-    }
 }
+
