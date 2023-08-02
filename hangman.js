@@ -39,14 +39,49 @@
 
         mainLetterNode.append(letterP)
 
-
+      }
         // let addsSmallP = mainLetterNode.append(letterP)
 
 
         // let pNode = document.createTextNode("basicLetter")
 
-    
+        function setAnswer() {
+          const wordOrder = Math.floor(Math.random() * wordlist.length);
+          const chosenWord = wordList[wordOrder];
+        }
 
-      
+        var wordDisplay = [];
+        var answer = "";
 
-        // mainLetterNode.appendChild()
+        let generateAnswerDisplay = document.getElementById("wordStatus")
+
+        function generateAnswerDisplay(word) {
+          var wordList = word.split("");
+          for (var i = 0; i < answer.length; i++) {
+            if (wordList[i] !== "-") {
+              wordDisplay.push("_");
+            } else {
+              wordDisplay.push("-");
+            }
+          }
+          return wordDisplay.join(" ");
+        }
+
+const containerHint = document.getElementById("clues");
+
+const wordList = [
+    ["oak gall", "beer", "jester", "gambeson", "pepper", "shire",]
+  ]
+
+const clueList = [[
+  "what medieval scribes used for ink, also the same color as this font", 
+  "most consumed beverage",
+  "the only person who could insult the king and get away with it",
+  "what you wore under you armor",
+  "most expensive spice in England",
+  "english name for a county"
+]]
+
+function showClues() {
+  containerHint.innerHTML = `clues - ${hint}`;
+}
