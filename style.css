@@ -40,13 +40,15 @@ h1 {
   color:rgb(46, 12, 12)
 }
 
-#alphabetBox {
+.alphabetBox {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  text-shadow: 5px 5px 8px #838583;
   border: 1px solid white;
   width: 99%;
   height: 30vh;
-  font-size: 45px;
+  font-size: 150px;
   font-family: 'MedievalSharp', cursive;
   color:rgb(46, 12, 12)
 }
@@ -55,11 +57,13 @@ h1 {
   border: 1px solid white;
   width: 99%;
   height: 30vh;  font-size: 45px;
-  size: 45px;
+  size: 95px;
   font-family: 'MedievalSharp', cursive;
   color:rgb(46, 12, 12)
 
 }
+
+
 
 #animations {
   border: 1px solid white;

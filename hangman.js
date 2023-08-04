@@ -29,7 +29,6 @@ const alphabetArray = [
   "z",
 ];
 
-
 const wordList = [
   ["oak gall", "beer", "jester", "gambeson", "pepper", "shire"],
 ];
@@ -45,12 +44,7 @@ const clueList = [
   ],
 ];
 
-//
-//
-
-const alphabet = document.querySelector(".alphaTest");
-
-// alphabet.textContent = "hello"
+const alphabet = document.querySelector(".alphabetBox");
 
 console.log(alphabetArray);
 // const buttons = function () {
@@ -60,117 +54,107 @@ console.log(alphabetArray);
 //       letters = document.createElement('ul');
 
 for (var i = 0; i < alphabetArray.length; i++) {
-  let mainLetterNode = document.querySelector(".alphaTest");
+  let mainLetterNode = document.querySelector(".alphabetBox");
 
   let letterDiv = document.createElement("div");
 
   letterDiv.setAttribute("id", `${alphabetArray[i]}`);
 
   let letterNode = document.createTextNode(`${alphabetArray[i]}`);
-
 
   letterDiv.appendChild(letterNode);
 
   mainLetterNode.appendChild(letterDiv);
-  
 }
 
 for (var i = 0; i < alphabetArray.length; i++) {
-  let mainLetterNode = document.querySelector(".alphaTest");
+  let letterClick = document.getElementById(`${alphabetArray[i]}`);
 
-  let letterDiv = document.createElement("div");
+  // let grayOut = document.getElementById()
+  letterClick.addEventListener("click", (e) => {
+    console.log(e);
+    // gray out the letter chosen,
+    e.target.style.color = "white";
 
-  letterDiv.setAttribute("id", `${alphabetArray[i]}`);
-
-  let letterNode = document.createTextNode(`${alphabetArray[i]}`);
-
-
-  letterDiv.appendChild(letterNode);
-
-  mainLetterNode.append(letterDiv);
-  
-
-let letterClick = document.getElementById(`${alphabetArray[i]}`);
-
-letterClick.addEventListener("click", e =>{
-
-console.log(e)
-
-e.target.style.color="white"
-
-  // if (letter.clicked){
-  //   console.log("clicked")
-  //   //if the div has been clicked, then change the style to gray
-  //   letterDiv.style.color = "lightgrey";
-  // }
-});
-
-
+    // if (letter.clicked){
+    //   console.log("clicked")
+    //   //if the div has been clicked, then change the style to gray
+    //   letterDiv.style.color = "lightgrey";
+    // }
+  });
 }
-// gray out the letter chosen,
-// let grayOut = document.getElementById()
 
-//show a letter if it is in the word,
-
-//inside word status, have as many underscore images inside divs as there are words in the answer
-
-
-
-//advance the hangman a step}
-
-// let addsSmallP = mainLetterNode.append(letterP)
-
-// let pNode = document.createTextNode("basicLetter")
+//__________________________________________________________________________________________
 
 let answer = "";
 
 function setAnswer() {
-
   //randomly choose a word to show
 
   const wordOrder = Math.floor(Math.random() * wordList.length);
   const chosenWord = wordList[wordOrder];
   answer = chosenWord;
-}
 
-setAnswer();
+  //TODO: when answer is chosen randomly, the clue is also accessed and shown
+
+  function checkArrays(answer, clueList) {
+    let(answer.array[i] === clueList.array[i]);
+    let(clueList.array[i] = querySelector.innerHTML(".clueClass"));
+
+    setAnswer();
+  }
+}
 
 // const wordDisplay = [];
 
-let generatedAnswerDisplay = document.getElementById("wordStatus");
+// let generatedAnswerDisplay = document.getElementById("wordStatus");
 
-function generateAnswerDisplay(word) {
-  var wordList = word.split("");
+// function generateAnswerDisplay() {
+
+//__________________________________________________________________________________________
+
+//inside word status, have as many underscore images inside divs as there are words in the answer
+
+{
   for (var i = 0; i < answer.length; i++) {
+    const element = document.querySelector(div);
 
-  //create a div with an image underline in it for each letter
+    let mainAnswerNode = document.querySelector(".wordStatus");
 
-  let letterBlank = document.createElement("div")
+    let blankDiv = document.createElement(div);
 
-  // letterBlank.???
+    let answerNode = document.createTextNode(`${answer[i]}`);
 
-  //TODO: make this function have the same DOM manipulation features as with the alphabet
+    blankDiv.appendChild(answerNode);
 
-  //iterate over the letters of the answer
-  //  if a letter matches a letter chosen by the user then the letter will replace the image with the blank as many times as it is in the answer
+    mainAnswerNode.appendChild(letterDiv);
 
+    element.style.border = "white 5px solid";
+    element.style.width = "60px";
+    element.style.width = "100px";
 
+    answerDiv.setAttribute("id", `blank-${i}`);
+  }
+}
 
+//letter clicked matches letter in answer){}
 
-  
-  //
-  //   if (wordList[i] === ) {
-  //     wordDisplay.push("_");
-  //   } else {
-  //     wordDisplay.push("-");
-  //   }
-  // }
-  // return wordDisplay.join(" ");
-}}
+//replace blank id with letter id that goes according the position in the answer
+
+// let splitWord = answer[i].split("")
+
+// for(var j = 0; j < splitWord.length; i++
+//create a div with an image underline in it for each letter
+// letterBlank.???
+
+//iterate over the letters of the answer
+//  if a letter matches a letter chosen by the user then the letter will replace the image with the blank as many times as it is in the answer
+
+//__________________________________________________________________________________________
+
+//advance the hangman a step}
 
 const containerHint = document.getElementById("clues");
-
-
 
 function showClues() {
   containerHint.innerHTML = `clues - ${hint}`;
