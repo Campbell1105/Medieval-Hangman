@@ -48,18 +48,23 @@ h1 {
   border: 1px solid white;
   width: 99%;
   height: 30vh;
-  font-size: 150px;
+  font-size: 100px;
   font-family: 'MedievalSharp', cursive;
-  color:rgb(46, 12, 12)
+  color:rgb(246, 219, 13)
 }
 
 #wordStatus {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 5px 5px 8px #838583;
   border: 1px solid white;
   width: 99%;
-  height: 30vh;  font-size: 45px;
+  height: 30vh;  font-size: 100px;
   size: 95px;
   font-family: 'MedievalSharp', cursive;
-  color:rgb(46, 12, 12)
+  color:rgb(246, 219, 13)
 
 }
 

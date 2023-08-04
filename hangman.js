@@ -68,7 +68,7 @@ for (var i = 0; i < alphabetArray.length; i++) {
   letterClick.addEventListener("click", (e) => {
     console.log(e);
     // gray out the letter chosen,
-    e.target.style.color = "white";
+    e.target.style.color = "rgb(46, 12, 12)";
 
     // if (letter.clicked){
     //   console.log("clicked")
@@ -93,6 +93,8 @@ function setAnswer() {
   console.log(wordIndex);
 
   // compare word index with the clue index
+
+  // set answer elements to 'display none' and reveal when clicked???
 
   //TODO: when answer is chosen randomly, the clue is also accessed and shown
 
