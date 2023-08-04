@@ -1,5 +1,3 @@
-// windows.onload = function () {
-
 const alphabetArray = [
   "a",
   "b",
@@ -29,19 +27,15 @@ const alphabetArray = [
   "z",
 ];
 
-const wordList = [
-  ["oak gall", "beer", "jester", "gambeson", "pepper", "shire"],
-];
+const wordList = ["oak gall", "beer", "jester", "gambeson", "pepper", "shire"];
 
 const clueList = [
-  [
-    "what medieval scribes used for ink, also the same color as this font",
-    "most consumed beverage",
-    "the only person who could insult the king and get away with it",
-    "what you wore under you armor",
-    "most expensive spice in England",
-    "english name for a county",
-  ],
+  "what medieval scribes used for ink, also the same color as this font",
+  "most consumed beverage",
+  "the only person who could insult the king and get away with it",
+  "what you wore under you armor",
+  "most expensive spice in England",
+  "english name for a county",
 ];
 
 const alphabet = document.querySelector(".alphabetBox");
@@ -91,20 +85,24 @@ let answer = "";
 function setAnswer() {
   //randomly choose a word to show
 
-  const wordOrder = Math.floor(Math.random() * wordList.length);
-  const chosenWord = wordList[wordOrder];
-  answer = chosenWord;
+  const wordOrder = wordList[Math.floor(Math.random() * wordList.length)];
+  const chosenWord = document.getElementById("wordStatus");
+  chosenWord.innerHTML = wordOrder; 
+  const answer = chosenWord;
+  const wordIndex = wordList.indexOf(wordOrder);
+  console.log(wordIndex);
+
+  // compare word index with the clue index
 
   //TODO: when answer is chosen randomly, the clue is also accessed and shown
 
-  function checkArrays(answer, clueList) {
-    let(answer.array[i] === clueList.array[i]);
-    let(clueList.array[i] = querySelector.innerHTML(".clueClass"));
-
-    setAnswer();
-  }
+  // function checkArrays(answer, clueList) {
+  //   for (i = 0; i < array.length; i++)
+  //   let(answer.array[i] === clueList.array[i]);
+  //   let(clueList.array[i] = querySelector.innerHTML(".clueClass"));
+  // }
 }
-
+setAnswer();
 // const wordDisplay = [];
 
 // let generatedAnswerDisplay = document.getElementById("wordStatus");
@@ -117,23 +115,23 @@ function setAnswer() {
 
 {
   for (var i = 0; i < answer.length; i++) {
-    const element = document.querySelector(div);
-
     let mainAnswerNode = document.querySelector(".wordStatus");
 
-    let blankDiv = document.createElement(div);
+    let blankDiv = document.createElement("div");
+
+    // let mainAnswerTextNode = document.createTextNode(`${answer[i]}`);
 
     let answerNode = document.createTextNode(`${answer[i]}`);
 
     blankDiv.appendChild(answerNode);
 
-    mainAnswerNode.appendChild(letterDiv);
+    blankDiv.setAttribute("id", `letter-${i}`);
 
-    element.style.border = "white 5px solid";
-    element.style.width = "60px";
-    element.style.width = "100px";
+    mainAnswerNode.appendChild(blankDiv);
 
-    answerDiv.setAttribute("id", `blank-${i}`);
+    // element.style.border = "white 5px solid";
+    // element.style.width = "60px";
+    // element.style.width = "100px";
   }
 }
 
