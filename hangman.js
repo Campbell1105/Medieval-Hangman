@@ -108,10 +108,13 @@ function setAnswer() {
   //TODO: when answer is chosen randomly, the clue is also accessed and shown
 
   function checkArrays(chosenWord, clueList) {
-    for (i = 0; i < array.length; i++)
-    let(chosenWord.array[i] === clueList.array[i]);
-    let(clueList.array[i] = querySelector.innerHTML(".clueClass"));
-
+    for (let i = 0; i < chosenWord.length; i++) {
+      if (chosenWord[i] === clueList[i]) {
+        clueList[i] = document.querySelector(".clueClass").innerHTML;
+      }
+    }
+  }
+checkArrays()
 
   for (let i = 0; i < alphabetArray.length; i++) {
     for (let j = 0; j < indexedWordForComparing.length; j++) {
@@ -133,7 +136,7 @@ function setAnswer() {
   }
 
    }
-  }
+  
    setAnswer();
 
 
