@@ -71,10 +71,17 @@ h1 {
 
 }
 
-
+[id^="blankDiv-"] {
+  border: solid 1px white;
+  height: 100px;
+  width: 70px;
+  margin: 0 10 0 10;
+  /* content-visibility: hidden; */
+}
 
 #animations {
   border: 1px solid white;
   width: 49%;
   height: 99vh
+  img = url("images/gallows.png");
 }

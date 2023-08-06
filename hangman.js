@@ -40,44 +40,23 @@ const clueList = [
 
 const alphabet = document.querySelector(".alphabetBox");
 
-
 let chosenLoopedWord;
 
-let wordIndexForComparing;
+let indexedChosenWord;
 
-
-for (var i = 0; i < alphabetArray.length; i++) {
+for (let a = 0; a < alphabetArray.length; a++) {
   let mainLetterNode = document.querySelector(".alphabetBox");
 
   let letterDiv = document.createElement("div");
 
-  letterDiv.setAttribute("id", `${alphabetArray[i]}`);
+  letterDiv.setAttribute("id", `${alphabetArray[a]}`);
 
-  let letterNode = document.createTextNode(`${alphabetArray[i]}`);
+  let letterNode = document.createTextNode(`${alphabetArray[a]}`);
 
   letterDiv.appendChild(letterNode);
 
   mainLetterNode.appendChild(letterDiv);
 }
-
-for (var i = 0; i < alphabetArray.length; i++) {
-  let letterClick = document.getElementById(`${alphabetArray[i]}`);
-
-  // let grayOut = document.getElementById()
-  letterClick.addEventListener("click", e => {
-    console.log(e);
-    // gray out the letter chosen,
-    e.target.style.color = "rgb(46, 12, 12)";
-
-    
- 
-  });
-
-  // document.getElementById("wordStatus").style.visibility = "hidden";
-  //   letterClick.addEventListener("click", e => {e.target.style.visibility = "visible" 
-  // })
-}
-
 
 //__________________________________________________________________________________________
 
@@ -85,65 +64,97 @@ let answer = "";
 
 function setAnswer() {
   //randomly choose a word to show
-
+  
+  
+  
+  
   const orderedWord = wordList[Math.floor(Math.random() * wordList.length)];
   const chosenWord = document.getElementById("wordStatus");
-  chosenWord.innerHTML = orderedWord; 
+  chosenWord.innerHTML = orderedWord;
   // const answer = chosenWord;
   const wordIndex = wordList.indexOf(orderedWord);
   // console.log(wordIndex);
-  indexedWordForComparing = wordList[wordIndex]
   
-  console.log(indexedWordForComparing.split(""))
-// console.log(wordIndexForComparing)
+  indexedChosenWord = wordList[wordIndex];
+  
+  
+  // Producing letter blanks
+  
+  for (let b = 0; b < indexedChosenWord.length; b++) {
+    
+    let answerLetterDiv = document.createElement("div");
 
+    answerLetterDiv.setAttribute("id", `blankDiv-${indexedChosenWord[i]}`)
+    
+    chosenWord.appendChild(answerLetterDiv)
+    
+
+  }
+    //loop over indexedChosenWord
+      //create as many divs as there are letters
+      
+
+      
+      console.log(indexedChosenWord.split(""));
+  // console.log(wordIndexForComparing)
+  
   // compare word index with the clue index
-
+  
   // set answer elements to 'display none' and reveal when clicked???
   
   //   console.log(e);
   //   // gray out the letter chosen,
-     
-  chosenLoopedWord = chosenWord
-  //TODO: when answer is chosen randomly, the clue is also accessed and shown
-
-  function checkArrays(chosenWord, clueList) {
-    for (let i = 0; i < chosenWord.length; i++) {
-      if (chosenWord[i] === clueList[i]) {
-        clueList[i] = document.querySelector(".clueClass").innerHTML;
-      }
-    }
-  }
-checkArrays()
-
-  for (let i = 0; i < alphabetArray.length; i++) {
-    for (let j = 0; j < indexedWordForComparing.length; j++) {
-    // console.log(alphabetArray[i].innerHTML)
-    // console.log(indexedWordForComparing[j])
   
-      if (alphabetArray[i] === indexedWordForComparing[j]) {
-        // console.log(indexedWordForComparing[j])
-        let answerLetterDiv = document.createElement('div')
-
+  chosenLoopedWord = chosenWord;
+  
+  
+  for (let i = 0; i < alphabetArray.length; i++) {
+    for (let j = 0; j < indexedChosenWord.length; j++) {
+      // console.log(alphabetArray[i].innerHTML)
+      // console.log(indexedChosenWord[j])
+      
+      if (alphabetArray[i] === indexedChosenWord[j]) {
+        
+        let correctLetter = document.getElementById(`blankDiv-${alphabetArray[i]}`)
+        
+        
+        correctLetter.innerHTML = `${alphabetArray[i]}`
+        
+        //access any id with the same letter that's in a blank div
+        /// add content to it
+        
+        
+        
+        // console.log(indexedChosenWord[j])
         
         //
       }
-  
-  
-     
     }
     
+    for (let k = 0; k < alphabetArray.length; k++) {
+      let letterClick = document.getElementById(`${alphabetArray[k]}`);
+    
+      // let grayOut = document.getElementById()
+      letterClick.addEventListener("click", (e) => {
+        console.log(e);
+        // gray out the letter chosen,
+        e.target.style.color = "rgb(46, 12, 12)";
+        //here is where we need to show if the clicked letter matches any of the blanks
+        
+        // 
+    });
+    
+    
+    }
   }
+}
 
-   }
-  
-   setAnswer();
+setAnswer();
 
+// const wordDisplay = [];
+//  console.log(chosenLoopedWord.innerHTML)
 
-   // const wordDisplay = [];
-  //  console.log(chosenLoopedWord.innerHTML)
-   
-   // let generatedAnswerDisplay = document.getElementById("wordStatus");
+// let generatedAnswerDisplay = document.getElementById("wordStatus");
 
 // function generateAnswerDisplay() {
 
@@ -163,14 +174,19 @@ checkArrays()
 
 //     blankDiv.appendChild(answerNode);
 
-
-
 //advance the hangman a step
 
-// const containerHint = document.getElementById("clues");
 
-// function showClues() {
-//   containerHint.innerHTML = `clues - ${hint}`;
-// }
+  //_______________________________________________________________________________
+  //TODO: when answer is chosen randomly, the clue is also accessed and shown
 
-// showClues();
+  // function checkArrays(chosenWord, clueList) {
+  //   for (let i = 0; i < chosenWord.length; i++) {
+  //     chosenWord[i] === clueList[i];
+  //     clueList[i] = document.querySelector.innerHTML(".clueClass");
+  //   }
+  // }
+
+  // checkArrays("hello", "this is a clue");
+
+  //_________________________________________________________________________________________
