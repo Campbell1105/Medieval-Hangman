@@ -116,7 +116,7 @@ function setAnswer() {
     for (let j = 0; j < indexedChosenWord.length; j++) {
       //console.log(indexedChosenWord[j], "looped split")
       //console.log(alphabetArray[i], "just i")
-      if (alphabetArray[i] === indexedChosenWord[j]) {
+      if (alphabetArray[i] == indexedChosenWord[j]) {
         
         let correctLetter = document.getElementById(`blankDiv-${alphabetArray[i]}`)
         console.log(correctLetter)
@@ -125,7 +125,7 @@ function setAnswer() {
         
         
         
-        //
+      
       }
     }
     
@@ -133,11 +133,13 @@ function setAnswer() {
       let letterClick = document.getElementById(`${alphabetArray[k]}`);
        //console.log(letterClick)
       // let grayOut = document.getElementById()
+    
       letterClick.addEventListener("click", (e) => {
         //console.log(e);
         //gray out the letter chosen,
        e.target.style.color = "rgb(46, 12, 12)";
        console.log(e.target.innerHTML)
+      //  e.correctLetter.style.contentVisibility.visible;
         
         //If e.target'ID' === letterDiv'ID' then document.getElementById.innerHTML'ID'
         //if innerHTML of target equals the any element of split string, put the letter in the div
