@@ -70,23 +70,27 @@ function setAnswer() {
   
   const orderedWord = wordList[Math.floor(Math.random() * wordList.length)];
   const chosenWord = document.getElementById("wordStatus");
-  chosenWord.innerHTML = orderedWord;
+  // chosenWord.innerHTML = orderedWord;
   // const answer = chosenWord;
   const wordIndex = wordList.indexOf(orderedWord);
-  // console.log(wordIndex);
+  // console.log(orderedWord);
   
   indexedChosenWord = wordList[wordIndex];
-  
+    // console.log(indexedChosenWord)
   
   // Producing letter blanks
   
   for (let b = 0; b < indexedChosenWord.length; b++) {
-    
+   
+    console.log(indexedChosenWord)
     let answerLetterDiv = document.createElement("div");
 
-    answerLetterDiv.setAttribute("id", `blankDiv-${indexedChosenWord[i]}`)
+    answerLetterDiv.setAttribute("id", `blankDiv-${indexedChosenWord[b]}`)
     
+    // console.log(answerLetterDiv)
     chosenWord.appendChild(answerLetterDiv)
+
+
     
 
   }
@@ -95,7 +99,7 @@ function setAnswer() {
       
 
       
-      console.log(indexedChosenWord.split(""));
+      //console.log(indexedChosenWord.split(""), "split");
   // console.log(wordIndexForComparing)
   
   // compare word index with the clue index
@@ -105,27 +109,21 @@ function setAnswer() {
   //   console.log(e);
   //   // gray out the letter chosen,
   
-  chosenLoopedWord = chosenWord;
+  // chosenLoopedWord = chosenWord;
   
   
   for (let i = 0; i < alphabetArray.length; i++) {
     for (let j = 0; j < indexedChosenWord.length; j++) {
-      // console.log(alphabetArray[i].innerHTML)
-      // console.log(indexedChosenWord[j])
-      
+      //console.log(indexedChosenWord[j], "looped split")
+      //console.log(alphabetArray[i], "just i")
       if (alphabetArray[i] === indexedChosenWord[j]) {
         
         let correctLetter = document.getElementById(`blankDiv-${alphabetArray[i]}`)
-        
-        
-        correctLetter.innerHTML = `${alphabetArray[i]}`
-        
-        //access any id with the same letter that's in a blank div
-        /// add content to it
+        console.log(correctLetter)
+        correctLetter.innerHTML=alphabetArray[i]
         
         
         
-        // console.log(indexedChosenWord[j])
         
         //
       }
@@ -133,20 +131,23 @@ function setAnswer() {
     
     for (let k = 0; k < alphabetArray.length; k++) {
       let letterClick = document.getElementById(`${alphabetArray[k]}`);
-    
+       //console.log(letterClick)
       // let grayOut = document.getElementById()
       letterClick.addEventListener("click", (e) => {
-        console.log(e);
-        // gray out the letter chosen,
-        e.target.style.color = "rgb(46, 12, 12)";
-        //here is where we need to show if the clicked letter matches any of the blanks
+        //console.log(e);
+        //gray out the letter chosen,
+       e.target.style.color = "rgb(46, 12, 12)";
+       console.log(e.target.innerHTML)
         
-        // 
-    });
+        //If e.target'ID' === letterDiv'ID' then document.getElementById.innerHTML'ID'
+        //if innerHTML of target equals the any element of split string, put the letter in the div
+      
+   });
     
     
     }
   }
+ 
 }
 
 setAnswer();
