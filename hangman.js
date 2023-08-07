@@ -90,7 +90,17 @@ function setAnswer() {
     // console.log(answerLetterDiv)
     chosenWord.appendChild(answerLetterDiv)
 
+function checkArrays(wordList, clueList) {
+  const results = [];
 
+  for (let i = 0; i < wordList.length; i++) {
+    if (wordList[i] === clueList[i]) {
+      results.push(clueList[i].querySelector(".clueClass").innerHTML);
+    }
+  }
+
+  return results;
+}
     
 
   }
@@ -139,7 +149,14 @@ function setAnswer() {
         //gray out the letter chosen,
        e.target.style.color = "rgb(46, 12, 12)";
        console.log(e.target.innerHTML)
-      //  e.correctLetter.style.contentVisibility.visible;
+
+
+      //  function letterClick(){
+      //   document.getElementById("id", `blankDiv-${indexedChosenWord[b]}`).style.visibility = "visible";
+      // }
+      
+      
+      
         
         //If e.target'ID' === letterDiv'ID' then document.getElementById.innerHTML'ID'
         //if innerHTML of target equals the any element of split string, put the letter in the div
@@ -153,6 +170,8 @@ function setAnswer() {
 }
 
 setAnswer();
+
+clueList
 
 // const wordDisplay = [];
 //  console.log(chosenLoopedWord.innerHTML)
@@ -183,12 +202,7 @@ setAnswer();
   //_______________________________________________________________________________
   //TODO: when answer is chosen randomly, the clue is also accessed and shown
 
-  // function checkArrays(chosenWord, clueList) {
-  //   for (let i = 0; i < chosenWord.length; i++) {
-  //     chosenWord[i] === clueList[i];
-  //     clueList[i] = document.querySelector.innerHTML(".clueClass");
-  //   }
-  // }
+
 
   // checkArrays("hello", "this is a clue");
 
