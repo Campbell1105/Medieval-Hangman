@@ -1,0 +1,13 @@
+Players will have a clue listed.
+
+They will click on a letter to guess the letters in the word.
+When they click on the alphabet, the letter guessed it will become grayed out.
+
+If they get a right letter it will appear in the word.
+If they are wrong there will be an 'x' generated in the text screen.
+If they get 6 wrong guesses the game is over.
+
+If you win a text message will appear in the text box
+If you lose a text message will appear in a the text box
+
+Add a play again button

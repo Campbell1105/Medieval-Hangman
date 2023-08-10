@@ -27,22 +27,33 @@ const alphabetArray = [
   "z",
 ];
 
-const wordList = ["oak gall", "beer", "jester", "gambeson", "pepper", "shire"];
+const wordList = [
+   "venice",
+   "beer",
+   "jester",
+   "gambeson",
+   "pepper", 
+   "shire", 
+   "vassal", 
+   "charlemagne",
+  ];
 
 const clueList = [
-  "what medieval scribes used for ink, also the same color as this font",
-  "most consumed beverage",
+  "in the middle ages, what city did the medici family rule",
+  "the most consumed beverage",
   "the only person who could insult the king and get away with it",
   "what you wore under you armor",
-  "most expensive spice in England",
+  "the most expensive spice in England",
   "english name for a county",
+  "in the middle ages, what was a the term for a low ranking noble",
+  "who was the first ever holy roman emperor",
 ];
 
 const alphabet = document.querySelector(".alphabetBox");
 
 let chosenLoopedWord;
 
-let indexedChosenWord;
+
 
 for (let a = 0; a < alphabetArray.length; a++) {
   let mainLetterNode = document.querySelector(".alphabetBox");
@@ -64,45 +75,53 @@ let answer = "";
 
 function setAnswer() {
   //randomly choose a word to show
-
-  const orderedWord = wordList[Math.floor(Math.random() * wordList.length)];
-  const chosenWord = document.getElementById("wordStatus");
+  const wordStatus = document.getElementById("wordStatus"); 
+  
+  const wordIndex = Math.floor(Math.random() * wordList.length)
+  answer = wordList[wordIndex];
+  
   // chosenWord.innerHTML = orderedWord;
   // const answer = chosenWord;
-  const wordIndex = wordList.indexOf(orderedWord);
+  
   // console.log(orderedWord);
 
-  indexedChosenWord = wordList[wordIndex];
-  // console.log(indexedChosenWord)
+  // console.log(answer)
 
   // Producing letter blanks
 
-  for (let b = 0; b < indexedChosenWord.length; b++) {
-    console.log(indexedChosenWord);
+  for (let b = 0; b < answer.length; b++) {
+    // console.log(answer);
     let answerLetterDiv = document.createElement("div");
 
-    answerLetterDiv.setAttribute("id", `blankDiv-${indexedChosenWord[b]}`);
-
+    // answerLetterDiv.setAttribute("id", `blankDiv-${answer[b]}`);
+    answerLetterDiv.setAttribute("id", `blankDiv-${b}`);
     // console.log(answerLetterDiv)
-    chosenWord.appendChild(answerLetterDiv);
+    wordStatus.appendChild(answerLetterDiv);
 
-    function checkArrays(wordList, clueList) {
-      const results = [];
+    // function checkArrays(wordList, clueList) {
+    //   const results = [];
     
-      for (let i = 0; i < wordList.length; i++) {
-        let indexedChosenWord = wordList[i];
+    //   for (let i = 0; i < wordList.length; i++) {
+    //     let answer = wordList[i];
     
-        if (indexedChosenWord === clueList[i]) {
-          results.push(clueList[i].querySelector(".clueClass").innerHTML);
-        }
-      }
+    //     if (answer === clueList[i]) {
+    //       results.push(clueList[i].querySelector(".clueClass").innerHTML);
+    //     }
+    //   }
     
-      return results;
-    }  }
-  //loop over indexedChosenWord
+    //   return results;
+    // } 
+   }
+
+
+    let cluesDiv = document.getElementById('clues');
+    let clue = clueList[wordIndex]
+    cluesDiv.innerHTML = `${clue}`
+
+  //loop over answer
   //create as many divs as there are letters
 
-  //console.log(indexedChosenWord.split(""), "split");
+  //console.log(answer.split(""), "split");
   // console.log(wordIndexForComparing)
 
   // compare word index with the clue index
@@ -115,17 +134,18 @@ function setAnswer() {
   // chosenLoopedWord = chosenWord;
 
   for (let i = 0; i < alphabetArray.length; i++) {
-    for (let j = 0; j < indexedChosenWord.length; j++) {
-      //console.log(indexedChosenWord[j], "looped split")
+    for (let j = 0; j < answer.length; j++) {
+      //console.log(answer[j], "looped split")
       //console.log(alphabetArray[i], "just i")
-      if (alphabetArray[i] == indexedChosenWord[j]) {
+      if (alphabetArray[i] == answer[j]) {
         let correctLetter = document.getElementById(
-          `blankDiv-${alphabetArray[i]}`
+          `blankDiv-${j}`
         );
         console.log(correctLetter);
         correctLetter.innerHTML = alphabetArray[i];
       }
     }
+  }
 
     for (let k = 0; k < alphabetArray.length; k++) {
       let letterClick = document.getElementById(`${alphabetArray[k]}`);
@@ -136,17 +156,17 @@ function setAnswer() {
         //console.log(e);
         //gray out the letter chosen,
         e.target.style.color = "rgb(46, 12, 12)";
-        console.log(e.target.innerHTML);
+        // console.log(e.target.innerHTML);
 
         //  function letterClick(){
-        //   document.getElementById("id", `blankDiv-${indexedChosenWord[b]}`).style.visibility = "visible";
+        //   document.getElementById("id", `blankDiv-${answer[b]}`).style.visibility = "visible";
         // }
 
         //If e.target'ID' === letterDiv'ID' then document.getElementById.innerHTML'ID'
         //if innerHTML of target equals the any element of split string, put the letter in the div
       });
     }
-  }
+//  }
 }
 
 setAnswer();
