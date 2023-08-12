@@ -107,7 +107,7 @@ function setAnswer() {
       // Next if the letter matches the letter in the answer then show the letter
 guessIsCorrect = false
         // comparing the clicked letter to the letters in the answer
-          for (let j = 0; j < answer.length; j++) {
+          for (let j = 0; j < answer.length; j++){
           // does the clicked letter equal the answer letter?
             if (alphabetArray[k] === answer[j]) {
               let correctLetter = document.getElementById(`blankDiv-${j}`);
@@ -115,10 +115,25 @@ guessIsCorrect = false
 
               guessIsCorrect = true
 
+
             }    
           }
-          // SET WIN CONDITIONS
-          // if all the answer letters have been selected then set "you win" in the text box
+
+          fullAnswer = true
+            // SET WIN CONDITIONS
+            // if all the answer letters have been selected then set "you win" in the text box
+            for (let j = 0; j < answer.length; j++){
+              if (document.getElementById(`blankDiv-${j}`).innerHTML === ""){
+                fullAnswer = false
+              }
+            }
+
+            if (fullAnswer === true) {
+              document.getElementById("textBox").innerHTML = " YOU WIN"
+              return
+            }
+            
+
 
           if (guessIsCorrect === false) {
             document.getElementById("textBox").innerHTML += "X" 
@@ -127,6 +142,7 @@ guessIsCorrect = false
           if (document.getElementById("textBox").innerHTML === "XXXXXX"){
             document.getElementById("textBox").innerHTML = " YOU LOSE"
           }
+
         //If e.target'ID' === letterDiv'ID' then document.getElementById.innerHTML'ID'
         //if innerHTML of target equals the any element of split string, put the letter in the div
       });
