@@ -5,6 +5,8 @@ Description
 
 Twist on the classic hangman game with questions about Medieval history.  The look and feel will try to emulate the medieval theme.
 
+Hit the refresh button on the browser to play again
+
 This game was deployed at https://github.com/Campbell1105/Medieval-Hangman.git
 on 8/12/2023.
 
