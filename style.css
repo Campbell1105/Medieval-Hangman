@@ -99,3 +99,10 @@ h1 {
   width: 99%;
   height: 15vh
 }
+
+.instructions {
+  color:rgb(14, 79, 32);
+  size: 15px;
+  font-family: 'MedievalSharp', cursive;
+  justify-content: center;
+}

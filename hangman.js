@@ -42,7 +42,7 @@ const clueList = [
   "in the middle ages, what city did the medici family rule",
   "the most consumed beverage",
   "the only person who could insult the king and get away with it",
-  "what you wore under you armor",
+  "what you wore under your armor",
   "the most expensive spice in England",
   "english name for a county",
   "in the middle ages, what was a the term for a low ranking noble",
