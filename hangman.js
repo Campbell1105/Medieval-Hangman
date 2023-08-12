@@ -105,19 +105,23 @@ function setAnswer() {
         //gray out the letter chosen,
         e.target.style.color = "rgb(46, 12, 12)";
       // Next if the letter matches the letter in the answer then show the letter
-
-        // for (let i = 0; i < alphabetArray.length; i++) {
+guessIsCorrect = false
+        // comparing the clicked letter to the letters in the answer
           for (let j = 0; j < answer.length; j++) {
+          // does the clicked letter equal the answer letter?
             if (alphabetArray[k] === answer[j]) {
-              let correctLetter = document.getElementById(
-                `blankDiv-${j}`
-              );
+              let correctLetter = document.getElementById(`blankDiv-${j}`);
               correctLetter.innerHTML = alphabetArray[k];
-            }
-          }
-        // }
 
-          // add x's for the number of incorrect answers
+              guessIsCorrect = true
+
+            }    
+          }
+
+          if (guessIsCorrect === false) {
+            document.getElementById("textBox").innerHTML += "X" 
+          }
+
 
         //If e.target'ID' === letterDiv'ID' then document.getElementById.innerHTML'ID'
         //if innerHTML of target equals the any element of split string, put the letter in the div

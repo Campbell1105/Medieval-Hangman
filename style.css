@@ -91,6 +91,11 @@ h1 {
 
 #textBox {
   /* border: 1px solid white; */
+  color:rgb(225, 14, 14);
+  height: 20vh;  font-size: 100px;
+  size: 95px;
+  font-family: 'MedievalSharp', cursive;
+  justify-content: center;
   width: 99%;
   height: 15vh
 }
