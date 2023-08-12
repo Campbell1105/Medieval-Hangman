@@ -117,12 +117,16 @@ guessIsCorrect = false
 
             }    
           }
+          // SET WIN CONDITIONS
+          // if all the answer letters have been selected then set "you win" in the text box
 
           if (guessIsCorrect === false) {
             document.getElementById("textBox").innerHTML += "X" 
           }
-
-
+          // if the text in the text box = XXXXXX then trigger the you lose statement
+          if (document.getElementById("textBox").innerHTML === "XXXXXX"){
+            document.getElementById("textBox").innerHTML = " YOU LOSE"
+          }
         //If e.target'ID' === letterDiv'ID' then document.getElementById.innerHTML'ID'
         //if innerHTML of target equals the any element of split string, put the letter in the div
       });
